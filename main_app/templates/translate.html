@@ -21,7 +21,7 @@
             <form class="col s12" action="{% url 'translate' %}" method="get">
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="text" type="text" class="validate" name="text" value="{{ text }}">
+                        <input id="text" type="text" class="validate" name="text">
                         <label for="text">Enter text to translate:</label>
                     </div>
                 </div>
@@ -29,7 +29,7 @@
                     <div class="input-field col s12">
                         <select id="source" name="source">
                             {% for code, name in languages.items %}
-                            <option value="{{ code }}" {% if code == detected_language %}selected{% endif %}>{{ name }}</option>
+                            <option value="{{ code }}">{{ name }}</option>
                             {% endfor %}
                         </select>
                         <label for="source">Select source language:</label>
@@ -39,7 +39,7 @@
                     <div class="input-field col s12">
                         <select id="destination" name="destination">
                             {% for code, name in languages.items %}
-                            <option value="{{ code }}" {% if code == destination_language %}selected{% endif %}>{{ name }}</option>
+                            <option value="{{ code }}">{{ name }}</option>
                             {% endfor %}
                         </select>
                         <label for="destination">Select destination language:</label>
@@ -58,8 +58,6 @@
         <div class="row">
             <h2 class="col s12">Translation:</h2>
             <p class="col s12">{{ translation.text }}</p>
-            <p class="col s12">Source language: {{ translation.src }}</p>
-            <p class="col s12">Destination language: {{ translation.dest }}</p>
         </div>
         {% endif %}
     </div>
