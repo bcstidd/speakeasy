@@ -73,7 +73,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'speakeasy.wsgi.application'
+git addWSGI_APPLICATION = 'speakeasyapp.wsgi.application'
 
 
 # Database

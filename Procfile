@@ -1,1 +1,1 @@
-web: gunicorn speakeasy.wsgi
+web: gunicorn speakeasyapp.wsgi
